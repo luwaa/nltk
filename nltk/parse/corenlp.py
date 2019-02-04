@@ -377,7 +377,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
         """
         default_properties = {
             'ssplit.isOneSentence': 'true',
-            'annotators': 'tokenize,ssplit,',
+            'annotators': 'tokenize,ssplit,truecase,',
         }
 
         # Supports only 'pos' or 'ner' tags.
