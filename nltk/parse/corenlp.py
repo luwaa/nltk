@@ -233,7 +233,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
     def api_call(self, data, properties=None):
         default_properties = {
             'outputFormat': 'json',
-            'annotators': 'tokenize,truecase,pos,lemma,ssplit,{parser_annotator}'.format(
+            'annotators': 'tokenize,truecase,pos,lemma,ssplit,{parser_annotator} -truecase.overwriteText'.format(
                 parser_annotator=self.parser_annotator
             ),
         }
