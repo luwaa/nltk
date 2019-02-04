@@ -57,7 +57,7 @@ class CoreNLPServer(object):
     ):
 
         if corenlp_options is None:
-            corenlp_options = ['-preload', 'tokenize,ssplit,pos,lemma,parse,depparse']
+            corenlp_options = ['-preload', 'tokenize,ssplit,truecase,pos,lemma,parse,depparse']
 
         jars = list(
             find_jar_iter(
@@ -233,7 +233,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
     def api_call(self, data, properties=None):
         default_properties = {
             'outputFormat': 'json',
-            'annotators': 'tokenize,pos,lemma,ssplit,{parser_annotator}'.format(
+            'annotators': 'tokenize,truecase,pos,lemma,ssplit,{parser_annotator}'.format(
                 parser_annotator=self.parser_annotator
             ),
         }
